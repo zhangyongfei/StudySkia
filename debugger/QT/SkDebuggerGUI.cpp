@@ -14,6 +14,8 @@
 #include "SkPicturePlayback.h"
 #include "SkPictureRecord.h"
 #include "SkPictureData.h"
+#include <qfiledialog.h>
+#include <QMessageBox>
 
 __SK_FORCE_IMAGE_DECODER_LINKING;
 
@@ -590,9 +592,9 @@ void SkDebuggerGUI::actionRewind() {
 }
 
 void SkDebuggerGUI::actionSave() {
-    fFileName = fPath.toAscii().data();
+    fFileName = fPath.toLatin1().data();
     fFileName.append("/");
-    fFileName.append(fDirectoryWidget.currentItem()->text().toAscii().data());
+    fFileName.append(fDirectoryWidget.currentItem()->text().toLatin1().data());
     saveToFile(fFileName);
 }
 
@@ -602,7 +604,7 @@ void SkDebuggerGUI::actionSaveAs() {
     if (!filename.endsWith(".skp", Qt::CaseInsensitive)) {
         filename.append(".skp");
     }
-    saveToFile(SkString(filename.toAscii().data()));
+    saveToFile(SkString(filename.toLatin1().data()));
 }
 
 void SkDebuggerGUI::actionScale(float scaleFactor) {
@@ -647,12 +649,12 @@ void SkDebuggerGUI::saveToFile(const SkString& filename) {
 
 void SkDebuggerGUI::loadFile(QListWidgetItem *item) {
     if (fDirectoryWidgetActive) {
-        fFileName = fPath.toAscii().data();
+        fFileName = fPath.toLatin1().data();
         // don't add a '/' to files in the local directory
         if (fFileName.size() > 0) {
             fFileName.append("/");
         }
-        fFileName.append(item->text().toAscii().data());
+        fFileName.append(item->text().toLatin1().data());
         loadPicture(fFileName);
     }
 }
@@ -667,7 +669,7 @@ void SkDebuggerGUI::openFile(const QString &filename) {
     fDirectoryWidgetActive = false;
     if (!filename.isEmpty()) {
         QFileInfo pathInfo(filename);
-        loadPicture(SkString(filename.toAscii().data()));
+        loadPicture(SkString(filename.toLatin1().data()));
         setupDirectoryWidget(pathInfo.path());
     }
     fDirectoryWidgetActive = true;

@@ -48,7 +48,7 @@
       [ 'skia_os == "win"', {
         'variables': {
           # This is the default location for the version of Qt current on 10/11/12
-          'qt_sdk%': 'C:/Qt/4.8.3/',
+          'qt_sdk%': 'C:/Qt/Qt5.2.1/5.2.1/msvc2012_64_opengl/',
         },
         'qt_sdk': '<(qt_sdk)',
         'qt_moc%': '<(qt_sdk)/bin/moc',
@@ -57,11 +57,12 @@
           '<(qt_sdk)/include/QtCore',
           '<(qt_sdk)/include/QtGui',
           '<(qt_sdk)/include/QtOpenGL',
+		  '<(qt_sdk)/include/QtWidgets',
         ],
         'qt_libs': [
-          '<(qt_sdk)/lib/QtCore4.lib',
-          '<(qt_sdk)/lib/QtGui4.lib',
-          '<(qt_sdk)/lib/QtOpenGL4.lib',
+          '<(qt_sdk)/lib/Qt5Core.lib',
+          '<(qt_sdk)/lib/Qt5Gui.lib',
+          '<(qt_sdk)/lib/Qt5OpenGL.lib',
         ],
       }],
     ],

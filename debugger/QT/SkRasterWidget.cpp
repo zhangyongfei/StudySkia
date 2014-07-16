@@ -7,6 +7,7 @@
  */
 
 #include "SkRasterWidget.h"
+#include <QStyleOption>
 
 SkRasterWidget::SkRasterWidget(SkDebugger *debugger) : QWidget() {
     fBitmap.allocN32Pixels(800, 800);

@@ -42,7 +42,7 @@
             '../third_party/externals/jsoncpp-chromium/overrides/include/json/value.h',
             '../third_party/externals/jsoncpp/include/json/writer.h',
             '../third_party/externals/jsoncpp/src/lib_json/json_batchallocator.h',
-            '../third_party/externals/jsoncpp/src/lib_json/json_reader.cpp',
+            '../third_party/externals/jsoncpp-chromium/overrides/src/lib_json/json_reader.cpp',
             '../third_party/externals/jsoncpp/src/lib_json/json_tool.h',
             '../third_party/externals/jsoncpp-chromium/overrides/src/lib_json/json_value.cpp',
             '../third_party/externals/jsoncpp/src/lib_json/json_writer.cpp',

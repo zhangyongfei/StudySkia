@@ -10,6 +10,7 @@
 
 #include "SkDebugger.h"
 #include "SkImageWidget.h"
+#include <QStyleOption>
 
 SkImageWidget::SkImageWidget(SkDebugger *debugger)
     : QWidget()
